@@ -7,9 +7,8 @@ class Model{
     public function __construct($tabNom){
         $this->tabla = $tabNom;
         $this->db = new db();
+        $this->db->conex('localhost', 'root', '', 'juegospremios');
         
-        $var=$this->db->conex('localhost', 'root', '', 'juegospremios');
-        echo ($var);
     }
     public function getAll() {
         $sql = 'SELECT * FROM ' . $this->tabla;

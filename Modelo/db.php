@@ -26,15 +26,11 @@ class db{
         $str = 'mysql:host=' . $server . ';dbname=' . $dbname;
         $this->db = new PDO($str,$user,$password);
         if ($this->db->errorCode() != null){
-            echo (1);return -1;
-        }
-            
+            return -1;
+        }        
         else{
-            echo (0);return 0;
-            
-        }
-        
-            
+            return 0;          
+        }       
     }
     
     /**
@@ -56,7 +52,6 @@ class db{
      * en un array
      */
     function results($sql){
-        echo ("Pablo");
         $result=$this->db->query($sql);
         $arrRes=array();
         if($result){
