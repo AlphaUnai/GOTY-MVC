@@ -1,22 +1,23 @@
 <?php
-include("gotyControlador.php");
+include("./Controlador/votosControl.php");
 // Miramos a ver si se indica alguna acción en la URL
 if (!isset($_REQUEST['action'])) {
 // No hay acción en la URL. Usamos la acción por defecto (main). Puedes
-    $action = "main";
+$action = "main";
 } else {
 // Sí hay acción en la URL. Recuperamos su nombre.
-    $action = $_REQUEST['action'];
+$action = $_REQUEST['action'];
 }
 // Hacemos lo mismo con el nombre del controlador
 if (!isset($_REQUEST['controller'])) {
-    $controlClassName = "gotyControl";
+// No hay controlador en la URL. Asignaremos un controlador por defecto
+
+$controllerClassName = "votosControl";
 } else {
 // Sí hay controlador en la URL. Recuperamos su nombre.
-    $controlClassName = $_REQUEST['control'];
+$controllerClassName = $_REQUEST['controller'];
 }
 // Instanciamos el controlador e invocamos al método que se llama como la
-
-$control = new $controlClassName();
-$control->$action();
+$controller = new $controllerClassName();
+$controller->$action();
 ?>
