@@ -3,7 +3,7 @@ include("./Controlador/votosControl.php");
 // Miramos a ver si se indica alguna acción en la URL
 if (!isset($_REQUEST['action'])) {
 // No hay acción en la URL. Usamos la acción por defecto (main). Puedes
-$action = "main";
+$action = "showNoms";
 } else {
 // Sí hay acción en la URL. Recuperamos su nombre.
 $action = $_REQUEST['action'];

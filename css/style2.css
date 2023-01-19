@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Lexend;
+    src: url(Lexend-Regular.ttf);
+}
+html{
+    cursor: url(https://cdn.custom-cursor.com/db/7609/32/among-us-galaxy-pointer.png) , pointer!important;
+}
+body{
+    background: rgb(40, 40, 40);
+    color:rgb(40, 40, 40);
+    text-align: center;
+    margin:25vh auto;
+    font-family: Lexend;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+h1::selection{
+    background: rgb(40, 40, 40);
+    color:orange;
+}
+input{
+    cursor: url(https://cdn.custom-cursor.com/db/7610/32/among-us-galaxy-cursor.png) , default!important;
+}
+p{
+font-size: 2vh;
+color: red;
+
+}
+.container{
+    font-size:2vh;
+    background-color: orange; 
+    border:solid black 1px;
+    padding: 2vw;
+    padding-top: 7vh;
+    padding-bottom: 10vh;
+    width: 30vw;
+    border:solid orange 1vw;
+    border-radius: 1vw;
+
+    
+    
+}
+[type="text"],[type="password"]{
+    text-align: center;
+    font-family: Lexend;
+    font-size:2vh;
+    width: 25vw;
+    height: 5vh;
+    border:solid orange .25vw;
+    margin-bottom: .5vh;
+    border-radius:1vw;
+    padding: 0;
+}
+[type="text"]:focus::placeholder,[type="password"]:focus::placeholder{
+    color:rgba(255,165,0,.5);
+}
+[type="text"]:focus,[type="password"]:focus{
+    outline:none;
+    color: orange;
+    border:solid grey .25vw;
+    border-radius:1vw;
+    background-color: grey;
+}
+[type="submit"],[type="button"]{
+    text-align: center;
+    font-family: Lexend;
+    font-size: 1.5vh;
+    background-color: rgb(40, 40, 40);
+    color: orange;
+    width: 10vw;
+    height: 3vh;
+    border-radius:1vw;
+    border:solid rgb(40, 40, 40) .25vw;
+    margin-top: 1vh;
+    padding: 0;
+
+}

@@ -2,7 +2,7 @@
 include_once 'db.php';
 class Model{
     protected $tabla;
-    private $db;
+    protected $db;
 
     public function __construct($tabNom){
         $this->tabla = $tabNom;
@@ -13,7 +13,7 @@ class Model{
     public function getAll() {
         $sql = 'SELECT * FROM ' . $this->tabla;
         $res = $this->db->results($sql);
-        $this->db->cerrar();
+        
         return $res;
     }
 
@@ -21,17 +21,20 @@ class Model{
         $sql='SELECT * FROM ' . $this->tabla .
              ' WHERE ' . $col . ' = "' . $value.'"';
         $res = $this->db->results($sql);
-        $this->db->cerrar();
+       
         return $res[0];         
     }
+
     public function getOne2($col1, $value1, $col2, $value2){
         $sql='SELECT * FROM ' . $this->tabla .
              ' WHERE ' . $col1 . ' = "' . $value1.
              '" and '. $col2 . ' = "' . $value2.'"';
         $res = $this->db->results($sql);
-        $this->db->cerrar();
+        
         return $res[0];         
     }
+    
+    
 
 }
 

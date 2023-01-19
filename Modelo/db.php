@@ -11,7 +11,7 @@ class db{
      * La variable de la base de datos db
      * @var mixed
      */
-    private $db;
+    protected $db;
 
     /**
      * Función de iniciar conexión
@@ -52,10 +52,11 @@ class db{
      * en un array
      */
     function results($sql){
+        //print_r($this->db);
         $result=$this->db->query($sql);
-        $arrRes=array();
-        if($result){
-            $arrRes = $result->fetchAll();
+        $arrRes = array();
+        while($row=$result->fetch(PDO::FETCH_NUM)){
+            array_push($arrRes, $row[0]);
         }
         return $arrRes;
     }

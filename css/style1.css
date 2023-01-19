@@ -1,0 +1,230 @@
+@font-face {
+    font-family: Lexend;
+    src: url(Lexend-Regular.ttf);
+}
+html{
+    cursor: url(https://cdn.custom-cursor.com/db/7609/32/among-us-galaxy-pointer.png) , pointer!important;
+}
+body{
+    font-family: Lexend;
+    font-size:1vw;
+    padding:0;
+    background-color:rgb(40,40,40);
+    padding-top:0;
+    margin:0;
+    color: white;
+   
+}
+h1{
+    text-align: center;
+}
+ul{
+    padding:0;
+}
+li{
+    list-style-type: none;
+    text-align: center ;
+    width: 20%;
+    display: inline-block; 
+}
+[type="radio"]{
+    -webkit-appearance: none;
+    width: 15vw;
+    height: 15vw;
+    border: solid black .1vw;
+    transition: all .25s ease;
+}
+input[type="radio"]:checked{
+    border:solid orange .5vw;
+    border-radius:10%;
+    
+     
+}
+label{
+    padding:.33vw;
+    padding-right:.50vw;
+    padding-left:.50vw;          
+}
+input[type="radio"]~label{
+    color: orange;
+    transition: all .25s ease;
+    
+}
+input[type="radio"]:checked ~ label{
+    background:orange;
+    color:black;
+    border:solid orange .25vw;
+    border-radius:1vw;
+     
+}
+input[type="radio"]:hover{
+    border:solid rgba(255,255,255,.5) .5vw;
+    border-radius:10%;
+    transition: all .25s ease;
+     
+}
+input[type="radio"]:checked:hover{
+    border:solid orange .5vw;
+    border-radius:10%;
+     
+}
+input[type="radio"]:hover ~ label{
+    color:rgba(255,255,255,.5);  
+    transition: all .25s ease;
+}
+input[type="radio"]:checked:hover ~ label{
+    background:orange;
+    color:black;
+    border:solid orange .25vw;
+    border-radius:1vw;
+     
+}
+input[type="submit"]{
+    background:orange;
+    color:black;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+    border: solid black .5vh;
+    height: 10vh;
+    width: 20vw;
+    font-size:3vw;
+    border-radius: 10vh;
+     
+}
+input{
+    cursor: url(https://cdn.custom-cursor.com/db/7610/32/among-us-galaxy-cursor.png) , default!important;
+}
+
+.titulos{
+    font-size: 2.5vw;
+    margin-top:8.5vw;
+    padding-top:1vh;
+    height:5vh;
+    color:orange;
+}
+.container:nth-of-type(1){
+    margin-top:1vh;
+}
+
+.container{
+    background-color:rgba(0,0,0,.5);
+    padding-bottom:2vh;
+    
+    padding-top: 0;
+    border-radius:5%;
+    width:100%;
+    margin-bottom: 1vh;
+}
+
+
+
+
+.header1{
+    background-color:orange;
+    margin-top:0;
+    position:absolute;
+    height:7vw;
+    top:0;
+    left:0;
+    width:100%;
+    padding:0;
+}
+.head{
+    color: rgb(40,40,40);
+    width:80%;
+    position: absolute;
+    top:1vh;
+    left:10vw;
+    font-size:4vw;
+    
+    margin-top:0;
+}
+.logoff{ 
+    z-index: 100;
+    font-size:1vw;
+    border:none ;
+    background-color:red;
+    height:7vw;
+    width:6vw;
+    float:right;  
+    background-image:url("https://cdn-icons-png.flaticon.com/512/1828/1828427.png");
+    background-size:3vw;
+    background-repeat:no-repeat;
+    background-position:center;
+}   
+.awards{ 
+    font-size:1vw;
+    border:none ;
+    position: absolute;
+    top:0;
+    left:0;
+    
+    background-color:white;
+    height:7vw;
+    width:6vw;
+     
+    background-image:url("https://cdn-icons-png.flaticon.com/512/2889/2889672.png");
+    background-size:3vw;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+
+
+
+
+.head2{
+    color: rgb(40,40,40);
+    text-align: center;
+    width:100%;
+    margin-top:0;
+    font-size:5vh;
+    position: absolute;
+    top: 50%;
+    left:50;
+
+}
+.header2{
+    background-color:orange;
+    margin-top:0;
+    position:absolute;
+    height:50%;
+    top:0;
+    left:0;
+    width:100%;
+    padding:0;
+}
+.login{
+    z-index: 100;
+    font-size:5vh;
+    border:none;
+    height:8vh;
+    width:8vh;
+    margin-top:50vh;
+    position: absolute;
+    top: 45%;
+    left:45%;
+    margin-left:auto;
+    border-radius: 50vw;
+    text-align: center;
+
+    background-color:red;
+    background-image:url("https://cdn-icons-png.flaticon.com/512/1828/1828391.png");
+    background-size:6vh;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+
+
+
+
+
+
+
+
+
+

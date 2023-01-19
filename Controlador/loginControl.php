@@ -4,7 +4,7 @@ include ("./Modelo/juegosDB.php");
 include ("./Modelo/LoginDB.php");
 include ("./Modelo/nomsDB.php");
 
-class votosControl{
+class loginControl{
     public function showNoms(){
         $noms = new NomsDB();
         $cats= $noms->getCats();
@@ -14,8 +14,8 @@ class votosControl{
             //echo ($idx);
             array_push($arrJuegos, $noms->getGamesPerCat($idx));
         }
-        $data['juegos'] = $arrJuegos;
-        Vista::show("votos", $data);
+        $data['log'] = $arrJuegos;
+        Vista::show("login", $data);
     }
 
 }
