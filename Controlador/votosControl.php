@@ -15,6 +15,7 @@ class votosControl{
             array_push($arrJuegos, $noms->getGamesPerCat($idx));
         }
         $data['juegos'] = $arrJuegos;
+        //print_r($data['juegos']);
         Vista::show("votos", $data);
     }
 
