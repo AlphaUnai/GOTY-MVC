@@ -7,12 +7,12 @@ class NomsDB extends Model {
     
     public function getGamesPerCat($cat){
         //echo ($cat);
-        $sql='SELECT juego FROM `noms` WHERE nomCat="'.$cat.'"';
+        $sql='SELECT n.juego, j.nombre, j.url  FROM noms n join juegos j on n.juego=j.codJuego WHERE nomCat="'.$cat.'"';
         if((array)$this->db){
             $this->db->conex('localhost', 'root', '', 'juegospremios');
         }
         $res = $this->db->results($sql);
-
+        //print_r($res);
         $this->db->cerrar();
         return $res;         
     }

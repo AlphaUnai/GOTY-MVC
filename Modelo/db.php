@@ -56,7 +56,9 @@ class db{
         $result=$this->db->query($sql);
         $arrRes = array();
         while($row=$result->fetch(PDO::FETCH_NUM)){
-            array_push($arrRes, $row[0]);
+            array_push($arrRes, $row);
+            /*print_r($row);
+            echo ("<HR>");*/
         }
         return $arrRes;
     }

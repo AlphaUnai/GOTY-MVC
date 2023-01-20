@@ -11,9 +11,9 @@ class loginControl{
         $arrJuegos=array();
         $data['cats'] = $cats;
         foreach($cats as $idx){
-            
             array_push($arrJuegos, $noms->getGamesPerCat($idx));
         }
+        
         $data['log'] = $arrJuegos;
         print_r($data);
         Vista::show("login", $data);

@@ -13,7 +13,6 @@ class Model{
     public function getAll() {
         $sql = 'SELECT * FROM ' . $this->tabla;
         $res = $this->db->results($sql);
-        
         return $res;
     }
 
