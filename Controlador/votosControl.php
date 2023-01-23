@@ -1,11 +1,14 @@
+<link rel="stylesheet" href="css/style1.css">
 <?php 
-include ("./Vista/Vista.php");
-include ("./Modelo/juegosDB.php");
-include ("./Modelo/LoginDB.php");
-include ("./Modelo/nomsDB.php");
+set_include_path('C:/xampp/htdocs/php/Proyecto Final/GOTY-MVC');
+include_once ("Vista/Vista.php");
+include_once ("Modelo/juegosDB.php");
+include_once ("Modelo/LoginDB.php");
+include_once ("Modelo/nomsDB.php");
 
 class votosControl{
     public function showNoms(){
+        session_start();
         $noms = new NomsDB();
         $catsbad= $noms->getCats();
         $arrJuegos=array();
@@ -18,9 +21,12 @@ class votosControl{
             array_push($arrJuegos, $noms->getGamesPerCat($idx));
         }
         $data['juegos'] = $arrJuegos;
-        
-        Vista::show("votos", $data);
+        $_SESSION['data'] = $data;
+        header("Location:  Vista/votos.php");
     }
 
 }
+$votos = new votosControl();
+
+$votos->showNoms();
 ?>

@@ -20,8 +20,9 @@ class Model{
         $sql='SELECT * FROM ' . $this->tabla .
              ' WHERE ' . $col . ' = "' . $value.'"';
         $res = $this->db->results($sql);
-       
-        return $res[0];         
+        if($res)
+        return $res[0];
+                 
     }
 
     public function getOne2($col1, $value1, $col2, $value2){
