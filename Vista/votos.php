@@ -18,7 +18,7 @@
                 if(isset($_SESSION['data'])){
                     $data = $_SESSION['data'];
                     echo ("<header class='header1'>");//cabecera de la página de votaciones
-                    echo ("<a href='Logoff.php' class='logoff'></a><br>");
+                    echo ("<a href='./../Controlador/Logoff.php' class='logoff'></a><br>");
                     echo ("<h1 class='head'>Juegos Premios 2022</h1>");
                     echo ("<a href='' class='awards'></a>");
                     echo ("</header>");
@@ -40,6 +40,7 @@
 
                     }
                     echo ("<input type='submit' value='Votar'>");
+                    echo ("<input type='submit' value='".$_SESSION['pass'][1]."-".$_SESSION['pass'][0]."'>");
                 }
         ?>
     </form>

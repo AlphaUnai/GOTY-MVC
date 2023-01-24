@@ -22,7 +22,14 @@ class votosControl{
         }
         $data['juegos'] = $arrJuegos;
         $_SESSION['data'] = $data;
-        header("Location:  Vista/votos.php");
+        print_r(parse_url(basename($_SERVER['HTTP_REFERER'])));
+        if(isset($_SESSION['user'])&&basename($_SERVER['HTTP_REFERER'])=='Proyecto%20Final'){
+            header("Location:  ./Vista/votos.php");
+        }else if(isset($_SESSION['user'])&&basename($_SERVER['HTTP_REFERER'])!='Proyecto%20Final'){
+            header("Location:  ./../Vista/votos.php");
+        }else{
+            header("Location:  ./Vista/login.php");
+        }
     }
 
 }
