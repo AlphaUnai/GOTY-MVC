@@ -8,20 +8,6 @@
     <title>Login</title>
 </head>
 <body>
-
-<?php
-        session_start();//session start
-        $a = "";//variable para los errores
-        
-        if(isset($_SESSION['user'])){
-           
-        }else{
-            
-        }
-    ?>
-
-
-
     <div class="container">
     <h1>Login</h1>
     <form action="./../Controlador/loginControl.php" method="get">
@@ -29,18 +15,12 @@
         <input type="password" name="pass1" id="pass1" placeholder="Contraseña" required><br>
         <input type="submit" name="submit" id="submit" value="Entrar"><br>
         <a href="Register.php"><input type="button" value="Registrarse"></a><br>
-       
-
     </form>
-    <?php 
+    <?php session_start();
     if(isset($_SESSION['ERROR'])){
-        echo ("<p>" . $_SESSION['ERROR'] . "</p>");
+        echo ("<p>" .$_SESSION['ERROR']. "</p>");
     } 
     ?>
-    </div>    
-        
-       
-    
-    
+    </div>       
 </body>
 </html>

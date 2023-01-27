@@ -9,7 +9,7 @@
 </head>
 <body></body>
     
-    <form action="Controlador\loginControl.php" method="GET">
+    <form action="./../Controlador\subirResultados.php" method="GET">
 
         <?php
 
@@ -40,7 +40,7 @@
 
                     }
                     echo ("<input type='submit' value='Votar'>");
-                    echo ("<input type='submit' value='".$_SESSION['pass'][1]."-".$_SESSION['pass'][0]."'>");
+                    //echo ("<input type='submit' value='".$_SESSION['pass'][1]."-".$_SESSION['pass'][0]."'>");
                 }
         ?>
     </form>

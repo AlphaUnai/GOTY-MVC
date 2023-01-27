@@ -1,17 +1,19 @@
 <?php 
-set_include_path('C:/xampp/htdocs/php/Proyecto Final/GOTY-MVC');
-include_once ("Vista/Vista.php");
-include_once ("Modelo/juegosDB.php");
-include_once ("Modelo/LoginDB.php");
-include_once ("Modelo/nomsDB.php");
-include_once('votosControl.php');
+$dir=dirname($_SERVER['HTTP_REFERER']);
+set_include_path("$dir/Proyecto Final/GOTY-MVC/");
+
 
 
 
 class loginControl{
-    private $urlini;
+    private string $urlini;
+    private bool $str=true;
     public function login(){
+        if($this->str){
+            $this->urlini=dirname($_SERVER['HTTP_REFERER']);
+        }
         /**/session_start();
+        require_once("./../Modelo/LoginDB.php");
         $log = new LoginDB();
         
         session_destroy();
@@ -20,39 +22,42 @@ class loginControl{
         if(isset($_GET['user'])){
             
             $user= ($log->getOne1('user',$_GET['user']));
+            //print_r($user);
             if($user){
-                print_r($user);
-                if($user[1]==md5($_GET['pass1'])){
+                if($user[2]==1){
                     
-                    print_r(md5($_GET['pass1']));
-                    echo ("<hr>");
-                    print_r($user[1]);
-                    $_SESSION['user']=$user[0];
-                    $_SESSION['pass'][0] = md5($_GET['pass1']);
-                    $_SESSION['pass'][1] = $user[1];
-                    header("Location: $this->urlini/Proyecto%20Final/GOTY-MVC/Controlador/votosControl.php", TRUE);
-                    exit();
-                    
+                    header("Location: $this->urlini/gracias.php", TRUE);
                 }else{
-                    $_SESSION['ERROR'] = "Contraseña incorrecta";
+                    if($user[1]==md5($_GET['pass1'])){
                     
-                    
+                        print_r(md5($_GET['pass1']));
+                        echo ("<hr>");
+                        print_r($user[1]);
+                        $_SESSION['user']=$user[0];
+                        $_SESSION['pass'][0] = md5($_GET['pass1']);
+                        $_SESSION['pass'][1] = $user[1];
+                        
+                        header("Location: votosControl.php", TRUE);
+
+                    }else{
+                        $_SESSION['ERROR'] = "Contraseña incorrecta";
+                        
+                        header("Location: $this->urlini/login.php", TRUE);
+                    }
                 }
+                
             }else{
                 $_SESSION['ERROR'] = "Este usuario no está registrado";
-                
+                header("Location: $this->urlini/login.php", TRUE);
             }
         }else{
-            header("Location:$this->urlini/Proyecto%20Final/GOTY-MVC/Controlador/papure.php", TRUE);
-            header("Location: $this->urlini/Proyecto%20Final/GOTY-MVC/Vista/login.php", TRUE);
+            header("Location: $this->urlini/papure.php", TRUE);
+            header("Location: $this->urlini/login.php", TRUE);
         }
-        header("Location: $this->urlini/Proyecto%20Final/GOTY-MVC/Vista/login.php", TRUE);
+        
+      // header("Location: $this->urlini/login.php", TRUE);
     }
-    public function setURL(){
-        if (!isset($this->urlini))
-            $this->urlini = dirname($_SERVER['HTTP_REFERER']);
-    }
-
+    
 }
 $logControl = new loginControl();
 

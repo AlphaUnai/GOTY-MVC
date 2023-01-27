@@ -13,7 +13,7 @@ class NomsDB extends Model {
         }
         $res = $this->db->results($sql);
         //print_r($res);
-        $this->db->cerrar();
+
         return $res;         
     }
 
@@ -21,7 +21,13 @@ class NomsDB extends Model {
         
         $sql='SELECT DISTINCT nomCat FROM `noms`';
         $res = $this->db->results($sql);
-        $this->db->cerrar();
+        return $res;         
+    }
+
+    public function updateVotes($category,$game){
+        $sql="update noms set votos= ((select votos from noms where((juego='$game')and(nomCat='$category')))+1) where ((juego='$game')and(nomCat='$category'));        ";
+        $res = $this->db->changes($sql);
+        
         return $res;         
     }
 }

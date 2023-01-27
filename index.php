@@ -22,4 +22,5 @@ $controllerClassName = $_REQUEST['controller'];
 // Instanciamos el controlador e invocamos al método que se llama como la
 $controller = new $controllerClassName();
 $controller->$action();
+
 ?>
