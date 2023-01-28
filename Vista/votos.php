@@ -14,7 +14,7 @@
         <?php
 
         session_start();
-        //print_r($_SESSION['data']);
+        
                 if(isset($_SESSION['data'])){
                     $data = $_SESSION['data'];
                     echo ("<header class='header1'>");//cabecera de la página de votaciones
@@ -40,7 +40,7 @@
 
                     }
                     echo ("<input type='submit' value='Votar'>");
-                    //echo ("<input type='submit' value='".$_SESSION['pass'][1]."-".$_SESSION['pass'][0]."'>");
+                    
                 }
         ?>
     </form>
