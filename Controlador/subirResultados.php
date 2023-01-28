@@ -1,7 +1,6 @@
 <?php 
-set_include_path('C:/xampp/htdocs/php/Proyecto Final/GOTY-MVC');
-require_once ("Modelo/LoginDB.php");
-require_once ("Modelo/nomsDB.php");
+require dirname(__FILE__).'/../Modelo/loginDB.php';
+require dirname(__FILE__).'/../Modelo/nomsDB.php';
 
     session_start();
     

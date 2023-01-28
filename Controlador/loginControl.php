@@ -1,23 +1,15 @@
 <?php 
-$dir=dirname($_SERVER['HTTP_REFERER']);
-set_include_path("$dir/Proyecto Final/GOTY-MVC/");
 
 
-
+require dirname(__FILE__).'/../Modelo/LoginDB.php';
 
 class loginControl{
-    private string $urlini;
-    private bool $str=true;
     public function login(){
-        if($this->str){
-            $this->urlini=dirname($_SERVER['HTTP_REFERER']);
-        }
-        /**/session_start();
-        require_once("./../Modelo/LoginDB.php");
-        $log = new LoginDB();
         
-        session_destroy();
+       
+        $log = new LoginDB(); 
         session_start();
+        
 
         if(isset($_GET['user'])){
             
@@ -26,10 +18,11 @@ class loginControl{
             if($user){
                 if($user[2]==1){
                     
-                    header("Location: $this->urlini/gracias.php", TRUE);
+                    header("Location: ../Vista/gracias.php", TRUE);
                 }else{
+                    $flag=12;
                     if($user[1]==md5($_GET['pass1'])){
-                    
+                       
                         print_r(md5($_GET['pass1']));
                         echo ("<hr>");
                         print_r($user[1]);
@@ -37,25 +30,32 @@ class loginControl{
                         $_SESSION['pass'][0] = md5($_GET['pass1']);
                         $_SESSION['pass'][1] = $user[1];
                         
-                        header("Location: votosControl.php", TRUE);
-
-                    }else{
-                        $_SESSION['ERROR'] = "Contraseña incorrecta";
-                        
-                        header("Location: $this->urlini/login.php", TRUE);
+                        header("Location: ../Controlador/votosControl.php", TRUE);
+                        $flag=11;
                     }
+                    if($flag==12){$_SESSION['ERROR'] = "Contraseña incorrecta";
+                    header("Location: ../Vista/login.php", TRUE);}
+                    else{
+                        header("Location: ../Controlador/votosControl.php", TRUE);
+                    }
+                    
+                    
                 }
                 
             }else{
                 $_SESSION['ERROR'] = "Este usuario no está registrado";
-                header("Location: $this->urlini/login.php", TRUE);
+                header("Location: ../Vista/login.php", TRUE);
             }
         }else{
-            header("Location: $this->urlini/papure.php", TRUE);
-            header("Location: $this->urlini/login.php", TRUE);
-        }
+           
+            if(pathinfo(dirname(__FILE__))['filename']=="Controlador"){
+                $head=dirname(__FILE__).'../Vista/login.php';
+            }
+            header('Location: ./Vista/login.php', TRUE);
+        }        
         
-      // header("Location: $this->urlini/login.php", TRUE);
+        
+       
     }
     
 }

@@ -1,9 +1,8 @@
 <?php 
-set_include_path('C:/xampp/htdocs/php/Proyecto Final/GOTY-MVC');
+require dirname(__FILE__).'/../Modelo/LoginDB.php';
 
-require_once ("Modelo/juegosDB.php");
-require_once ("Modelo/LoginDB.php");
-require_once ("Modelo/nomsDB.php");
+require dirname(__FILE__).'/../Modelo/JuegosDB.php';
+require dirname(__FILE__).'/../Modelo/nomsDB.php';
 
 
 
@@ -25,7 +24,7 @@ class regControl{
                 if(md5($_GET['pass2'])==md5($_GET['pass1'])){
                     $log = new LoginDB();
                     $log->newUser($_GET['user'], md5($_GET['pass1']));
-                    header("Location: $this->urlini/PHP/Proyecto%20Final/GOTY-MVC/Vista/login.php", TRUE);
+                    header("Location: ../Vista/login.php", TRUE);
                    
                     
                 }else{
@@ -38,8 +37,8 @@ class regControl{
             
         }else{
             
-            header("Location:$this->urlini/PHP/Proyecto%20Final/GOTY-MVC/Controlador/papure.php", TRUE);
-            header("Location: $this->urlini/PHP/Proyecto%20Final/GOTY-MVC/Vista/register.php", TRUE);
+            header("Location: ../Controlador/papure.php", TRUE);
+            header("Location: ../Vista/register.php", TRUE);
         }
         
         

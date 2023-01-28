@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="css/style1.css">
 <?php 
-set_include_path('C:/xampp/htdocs/php/Proyecto Final/GOTY-MVC');
-include_once ("Vista/Vista.php");
-include_once ("Modelo/juegosDB.php");
-include_once ("Modelo/LoginDB.php");
-include_once ("Modelo/nomsDB.php");
+require dirname(__FILE__).'/../Modelo/LoginDB.php';
+require dirname(__FILE__).'/../Modelo/JuegosDB.php';
+require dirname(__FILE__).'/../Modelo/nomsDB.php';
+require dirname(__FILE__).'/../Vista/votos.php';
 
 class votosControl{
     public function showNoms(){

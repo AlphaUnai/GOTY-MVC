@@ -1,4 +1,4 @@
 <?php
 session_start();
-print_r($_SESSION['dat']);
+print_r("papope");
 ?>
