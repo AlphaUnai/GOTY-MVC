@@ -17,7 +17,7 @@
         <a href="Register.php"><input type="button" value="Registrarse"></a><br>
     </form>
     <?php session_start();
-    if(isset($_SESSION['ERROR'])){
+    if(isset($_SESSION['ERROR'])){//si el error existe lo displayea
         echo ("<p>" .$_SESSION['ERROR']. "</p>");
     } 
     ?>

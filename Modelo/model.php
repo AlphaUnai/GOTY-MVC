@@ -1,36 +1,36 @@
 <?php
+//incluye la clase bd
 include_once 'db.php';
+
 class Model{
     protected $tabla;
     protected $db;
 
-    public function __construct($tabNom){
+    public function __construct($tabNom){//constructor
         $this->tabla = $tabNom;
         $this->db = new db();
-        $this->db->conex('localhost', 'root', '', 'juegospremios');
-        
+        $this->db->conex('localhost', 'root', '', 'juegospremios');   
     }
-    public function getAll() {
+
+    public function getAll() {//obtener todos
         $sql = 'SELECT * FROM ' . $this->tabla;
         $res = $this->db->results($sql);
         return $res;
     }
 
-    public function getOne1($col, $value){
+    public function getOne1($col, $value){//obtener uno específico
         $sql='SELECT * FROM ' . $this->tabla .
              ' WHERE ' . $col . ' = "' . $value.'"';
         $res = $this->db->results($sql);
         if($res)
-        return $res[0];
-                 
+        return $res[0];             
     }
 
-    public function getOne2($col1, $value1, $col2, $value2){
+    public function getOne2($col1, $value1, $col2, $value2){//obtener un par
         $sql='SELECT * FROM ' . $this->tabla .
              ' WHERE ' . $col1 . ' = "' . $value1.
              '" and '. $col2 . ' = "' . $value2.'"';
         $res = $this->db->results($sql);
-        
         return $res[0];         
     }
     

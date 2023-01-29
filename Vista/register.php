@@ -21,7 +21,7 @@
         </form>
         <?php
         session_start();
-            if(isset($_SESSION['ERROR'])){
+            if(isset($_SESSION['ERROR'])){//si el error existe lo displayea
                 echo ("<p>".$_SESSION['ERROR']."</p>");  
             }
              //Párrafo de errores

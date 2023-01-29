@@ -7,7 +7,7 @@ require dirname(__FILE__).'/../Modelo/LoginDB.php';//hago un requerimiento usand
  */
 class loginControl{
     public function login(){
-        $log = new LoginDB();//estancio una base de datos hacia el login
+        $log = new LoginDB();//base de datos hacia el login
         session_start();
         $_SESSION['ERROR']="";// establezco el error a vacio
 
