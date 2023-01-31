@@ -1,14 +1,30 @@
 <?php 
-//los require de uso en la entrega bien comentada aparecerán documentados
+/**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
+ * @see LoginDB.php
+ * @see JuegosDB.php
+ * @see nomsDB.php
+ */
 require dirname(__FILE__).'/../Modelo/LoginDB.php';
 require dirname(__FILE__).'/../Modelo/JuegosDB.php';
 require dirname(__FILE__).'/../Modelo/nomsDB.php';
 
 
-
+/**
+   * Clase regControl
+   * La clase  regControl sirve para cargar los datos 
+   * desde register.php hasta la base de datos
+   * @see register.php
+   */
 
 class regControl{
-    private $urlini;
+     /**
+     * Función login
+     *  Es la función que controla la clase,
+     *  tiene todas las funcionalidades de comprobación de contraseñas,
+     *  conexión e inserción a la BD
+     * @return void
+     */
     public function login(){
         /**/session_start();
         $log = new LoginDB();        

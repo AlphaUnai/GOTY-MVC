@@ -16,7 +16,11 @@
         <input type="submit" name="submit" id="submit" value="Entrar"><br>
         <a href="Register.php"><input type="button" value="Registrarse"></a><br>
     </form>
-    <?php session_start();
+    <?php 
+    /**
+     * @author Unai Díez Reguera, https://github.com/AlphaUnai
+     */
+    session_start();
     if(isset($_SESSION['ERROR'])){//si el error existe lo displayea
         echo ("<p>" .$_SESSION['ERROR']. "</p>");
     } 

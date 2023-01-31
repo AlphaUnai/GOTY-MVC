@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
  * Clase db
  * su uso es el exclusivo de conexión y cierre
  * a la base de datos, así como sus funciones result y changes
@@ -45,8 +46,7 @@ class db{
     /**
      * Función results 
      * Obtiene los registros de la consulta 
-     * @param string $sql 
-     * Consulta SQL
+     * @param string $sql Consulta SQL
      * @return array
      * Devuelve todos los resultados de la consulta
      * en un array
@@ -66,8 +66,7 @@ class db{
     /**
      * Función changes
      * Obtiene las filas afectadas por la consulta sql
-     * @param string $sql 
-     * Consulta SQL
+     * @param string $sql Consulta SQL
      * @return int
      * Devuelve filas afectadasS
      */

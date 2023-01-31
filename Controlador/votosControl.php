@@ -1,12 +1,29 @@
 <link rel="stylesheet" href="css/style1.css">
 <?php 
-//escribo los require que necesito
+/**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
+ * @see LoginDB.php
+ * @see JuegosDB.php
+ * @see nomsDB.php
+ * @see votos.php
+ */
 require dirname(__FILE__).'/../Modelo/LoginDB.php';
 require dirname(__FILE__).'/../Modelo/JuegosDB.php';
 require dirname(__FILE__).'/../Modelo/nomsDB.php';
 require dirname(__FILE__).'/../Vista/votos.php';
-
+/**
+ * Clase votosControl
+ * Intermedia entre la base de datos y votos.php
+ * @see votos.php
+ */
 class votosControl{
+    /**
+     * Función showNoms
+     * Se encarga de controlar los datos que devuelve loginControl,
+     * controla si ha votado o no el usuario y redirige a votos.php
+     * con toda la información extraída de la base de datos
+     * @return void
+     */
     public function showNoms(){
         
         if(isset($_SESSION['user'])){
