@@ -1,11 +1,23 @@
 <?php 
 
-
+/**
+ * @see LoginDB.php
+ */
 require dirname(__FILE__).'/../Modelo/LoginDB.php';//hago un requerimiento usando el dirname(__FILE__)
 /**
- * 
- */
+   * Clase loginControl
+   * La clase  loginControl  sirve para cargar datos a la vista login,
+   * manipular la información que salga de esta,
+   *  y redirigir a donde sea necesario
+   * @see login.php
+   */
 class loginControl{
+    /**
+     * Función login
+     * Es la función que controla todo lo que pase con la clase loginControl
+     * Es un conjunto de condicionales que aseguran la redirección correcta
+     * @return void
+     */
     public function login(){
         $log = new LoginDB();//base de datos hacia el login
         session_start();
@@ -14,7 +26,6 @@ class loginControl{
         if(isset($_GET['user'])){
             
             $user= ($log->getOne1('user',$_GET['user']));
-            //print_r($user);
             if($user){
                 if($user[2]==1){// aunque sea inseguro, en el manual de usuario lo pondre:
                                 // compruebo el nombre primero antes de las contraseñas para ahorrar ejecución
