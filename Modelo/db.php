@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
  * Clase db
  * su uso es el exclusivo de conexión y cierre
  * a la base de datos, así como sus funciones result y changes

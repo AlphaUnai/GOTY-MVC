@@ -1,6 +1,7 @@
 <?php 
 
 /**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
  * @see LoginDB.php
  */
 require dirname(__FILE__).'/../Modelo/LoginDB.php';//hago un requerimiento usando el dirname(__FILE__)
@@ -31,7 +32,7 @@ class loginControl{
                                 // compruebo el nombre primero antes de las contraseñas para ahorrar ejecución
                                 // asi que si el programa devuelve la página gracias aunque pongas una contraseña incorrecta,
                                 // ese es el objetivo, no un error de programación
-                    header("Location: ../Vista/gracias.php", TRUE);//redirijo
+                    header("Location: ../Vista/gracias.php", TRUE);//
                 }else{
                     $flag=12;
                     if($user[1]==md5($_GET['pass1'])){

@@ -20,6 +20,9 @@
             <input type="submit" name="submit" id="submit"><br>
         </form>
         <?php
+        /**
+         * @author Unai Díez Reguera, https://github.com/AlphaUnai
+         */
         session_start();
             if(isset($_SESSION['ERROR'])){//si el error existe lo displayea
                 echo ("<p>".$_SESSION['ERROR']."</p>");  

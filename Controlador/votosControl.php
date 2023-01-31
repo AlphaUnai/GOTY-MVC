@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="css/style1.css">
 <?php 
 /**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
  * @see LoginDB.php
  * @see JuegosDB.php
  * @see nomsDB.php

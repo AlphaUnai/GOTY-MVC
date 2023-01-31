@@ -1,5 +1,6 @@
 <?php
 /**
+ * @author Unai Díez Reguera, https://github.com/AlphaUnai
  * @see db.php
  */
 include_once 'db.php';

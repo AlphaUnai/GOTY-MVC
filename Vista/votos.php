@@ -12,6 +12,9 @@
     <form action="./../Controlador\subirResultados.php" method="GET">
 
         <?php
+        /**
+         * @author Unai Díez Reguera, https://github.com/AlphaUnai
+         */
 
         session_start();
         
