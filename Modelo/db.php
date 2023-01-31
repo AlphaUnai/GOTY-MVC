@@ -45,8 +45,7 @@ class db{
     /**
      * Función results 
      * Obtiene los registros de la consulta 
-     * @param string $sql 
-     * Consulta SQL
+     * @param string $sql Consulta SQL
      * @return array
      * Devuelve todos los resultados de la consulta
      * en un array
@@ -66,8 +65,7 @@ class db{
     /**
      * Función changes
      * Obtiene las filas afectadas por la consulta sql
-     * @param string $sql 
-     * Consulta SQL
+     * @param string $sql Consulta SQL
      * @return int
      * Devuelve filas afectadasS
      */
